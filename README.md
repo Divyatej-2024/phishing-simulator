@@ -16,7 +16,7 @@ This project simulates real-world phishing attacks to help users understand and 
 ## 📦 Setup Instructions
 
 1. Clone the repository  
-   `git clone https://github.com/yourusername/phishing-simulator.git`
+   `git clone https://github.com/Divyatej-2024/phishing-simulator.git`
 2. Install dependencies  
    `pip install -r requirements.txt`
 3. Run the server  
