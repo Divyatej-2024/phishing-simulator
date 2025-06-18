@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phishing Simulator</title>
+  <script>
+    function loadAttacks(type) {
+      fetch(`/simulate/${type}`)
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("result").innerHTML = "";
+          data.forEach(attack => {
+            const div = document.createElement("div");
+            div.innerHTML = `<h3>${attack.subject}</h3><p>${attack.body}</p><strong>Type:</strong> ${attack.type}<hr>`;
+            document.getElementById("result").appendChild(div);
+          });
+        });
+    }
+  </script>
+</head>
+<body>
+  <h1>Phishing Attack Simulator</h1>
+  <button onclick="loadAttacks('email_phishing')">Email Phishing</button>
+  <button onclick="loadAttacks('smishing')">Smishing</button>
+  <div id="result"></div>
+</body>
+</html>
